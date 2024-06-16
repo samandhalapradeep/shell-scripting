@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "sagar: hi pradeep, gm"
+echo "pradeep: hi sagar, gm"
+echo "sagar: how are you pradeep"
+echo "pradeep: im good tq, what about you"
+ech "sagar: im fine tq"
