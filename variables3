@@ -4,4 +4,4 @@ echo "enter usrname"
 read -s username
 echo " enther password"
 raed -s password
-echo "user name is: $username, password is: $password"
+echo "user name is: $USERNAME, password is: $PASSWORD"
