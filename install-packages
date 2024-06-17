@@ -1,8 +1,11 @@
 #!/bin/bash
 
-id=$(id -u)
+ID=$(id -u)
+R="\e[31m"
+G="\[32m"
+N="\[33m"
 
-if [$? -ne 0]
+if [$ID -ne 0]
 then
     echo -e "$R Error: please run the script with root access $N"
     exit 1
