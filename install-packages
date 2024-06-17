@@ -3,14 +3,45 @@
 ID=$(id -u)
 R="\e[31m"
 G="\[32m"
-N="\[33m"
+Y="\[33m"
+N="\[0m"
 
-if [$ID -ne 0]
+TIMESTAMP=$(date +%F-%H-%M-%S)
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
+
+echo "script started executing at $TIMESTAMP" &>> $LOGFILE
+
+validate(){
+if [$1 -ne 0 ]
+    then 
+echo -e "$2...$R failed $N"
+else
+ echo -e "$2...$G success $N"
+fi 
+}
+
+if [ $ID -ne 0 ]
 then
     echo -e "$R Error: please run the script with root access $N"
     exit 1
 else
-   echo " you are the root user"
-   fi
+    echo " you are the root user"
+fi
 
-   echo " all arguments are passed: $@"
+#    echo " all arguments are passed: $@"
+#  git mysql postfix net-tools
+#  package = git mysql postfix net-tools
+for package in $@
+yum list installed $package &>> $LOGFILE
+do
+  if [ $? -ne 0 ]
+  then 
+    yum install $package -y &>> $LOGFILE
+    validate $? " installation of $package"
+else
+    echo -e "$package is already installed... $Y skipping $N"
+fi
+done
+    
+
+
