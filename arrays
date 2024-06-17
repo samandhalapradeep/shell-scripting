@@ -7,3 +7,11 @@ echo "first value: ${fruits[0]}"
 echo "scnd value: ${fruits[1]}"
 
 echo "third value: ${fruits[2]}"
+
+pradeep=("sagar" "srinu" "rahul")
+
+echo  "s for : ${pradeep[0]}"
+
+echo  "s for : ${pradeep[1]}"
+
+echo  "r for : ${pradeep[2]}"
