@@ -1,0 +1,9 @@
+#!/bin/bash
+
+number=$1
+if [ $number -ge 100]
+then
+   echo " given number $number greater then 100"
+else
+   echo " given number $number not greater then 100"
+fi
