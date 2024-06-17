@@ -32,8 +32,8 @@ fi
 #  git mysql postfix net-tools
 #  package = git mysql postfix net-tools
 for package in $@
-yum list installed $package &>> $LOGFILE
 do
+  yum list installed $package &>> $LOGFILE
   if [ $? -ne 0 ]
   then 
     yum install $package -y &>> $LOGFILE
