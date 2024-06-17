@@ -1,23 +1,46 @@
 #!/bin/bash
 
-id=$(id -u)
+# id=$(id -u)
+# validate(){
+#     if [$? -ne 0]
+# then
+#     echo "Error: installing failed"
+#     exit 1
+# else
+#    echo " installing success"
+#    fi
+# }
+# if [$id -ne 0]
+# then
+#     echo "Error: please run the script with root access"
+# else
+#     echo " you are root user"
+# fi 
+# yum install mysql -y
+# validate
+# yum install git -y
+# validate
 
+
+
+id=$(id -u)
 validate(){
-    if [$? -ne 0]
+    if [$1 -ne 0]
 then
-    echo "Error: installing failed"
+    echo "Error: $2.... failed"
     exit 1
 else
-   echo " installing success"
+   echo " $2.... success"
    fi
 }
 if [$id -ne 0]
 then
     echo "Error: please run the script with root access"
+    exit 1
 else
     echo " you are root user"
 fi 
 yum install mysql -y
-validate
+validate $? "mysql"
 yum install git -y
-validate
+validate $? "git"
