@@ -16,4 +16,5 @@ echo  "s for : ${pradeep[1]}"
 
 echo  "r for : ${pradeep[2]}"
 
-echo "all : ${fruits[@]} ${pradeep[@]}"
+
+echo -n ${fruits[@]} ${pradeep[@]}
