@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source_dir=/tmp/shellscript-logs
+
+R="\e[31m"    # colors indications red green yellow nrmal 
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+if [ ! -d $source_dir ] # ! denotes opposite
+then
+    echo -e "$R source directory : $source_dir does not exists. $n"
+fi
+
+files_to_delete=$(find source_dir -type f -mtime +14 -name "*.js")
+
+while ifs= read -r line
+do
+    echo "deleting file : $line"
+done
