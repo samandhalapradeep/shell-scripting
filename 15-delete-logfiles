@@ -9,12 +9,12 @@ N="\e[0m"
 
 if [ ! -d $source_dir ] # ! denotes opposite
 then
-    echo -e "$R source directory : $source_dir does not exists. $n"
+    echo -e "$R source directory : $source_dir does not exists. $N"
 fi
 
-files_to_delete=$(find $source_dir -type f -mtime +14 -name "*.js")
+FILES_TO_DELETE=$(find $source_dir -type f -mtime +14 -name "*.js")
 
 while IFS= read -r line
 do
     echo "deleting file : $line"
-done <<< $files_to_delete
+done <<< $FILES_TO_DELETE
