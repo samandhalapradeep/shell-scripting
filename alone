@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Declare a variable for the sentence
+sentence="Sometimes being alone feels better. Walking away from everyone and everything, knowing people."
+
+# Function to print the sentence
+print_sentence() {
+    echo "$sentence"
+}
+
+# Loop to print the sentence multiple times
+for ((i=1; i<=10; i++)); do
+    echo "Output $i:"
+    print_sentence
+    echo ""
+done
+
+# Conditional statement to print the sentence based on a condition
+echo "Do you want to see the sentence again? (yes/no)"
+read answer
+
+if [[ $answer == "yes" ]]; then
+    print_sentence
+else
+    echo "Okay, exiting."
+fi
+
+# Array to store and print the sentence
+sentences=("$sentence" "Another sentence: $sentence")
+
+for item in "${sentences[@]}"; do
+    echo "$item"
+done
