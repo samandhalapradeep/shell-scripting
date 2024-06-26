@@ -14,5 +14,5 @@ sum=$((num1 + num2))
 sub=$((num1 - num2))
 
 # Print the results with the sum and sub in red
-echo -e "Sum: {$N} {$sum} {$R}"
-echo -e "Sub: {$N} {$sub} {$R}"
+echo -e "Sum: {$R} {$sum} {$N}"
+echo -e "Sub: {$R} {$sub} {$N}"
