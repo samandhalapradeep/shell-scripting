@@ -7,8 +7,8 @@ num2=20
 
 sum=$((num1+num2))
 
-echo -e "$R sum: $sum... $N"
+echo -e "$R sum: $sum.. $N"
 
 sub=$((num1-num2))
 
-echo -e "$R sub: $sub... $N"
+echo -e "$R sub: $sub.. $N"
