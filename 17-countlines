@@ -1,0 +1,10 @@
+#!/bin/bash
+
+file=$1
+
+if [ -f "$file" ]; then
+    lines=$(wc -l < "$file")
+    echo "Number of lines in $file: $lines"
+else
+    echo "File $file not found."
+fi
