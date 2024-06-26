@@ -11,4 +11,4 @@ echo "$R sum: $sum $N"
 
 sub=$((num1-num2))
 
-ech0 "$R sub: $sub $N"
+echo "$R sub: $sub $N"
