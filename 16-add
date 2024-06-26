@@ -1,11 +1,14 @@
 #!/bin/bash
+R="\e[31m" 
+N="\e[0m"
+
 num1=10
 num2=20
 
 sum=$((num1+num2))
 
-echo "sum: $sum"
+echo "$R sum: $sum $N "
 
 sub=$((num1-num2))
 
-ech0 "sub: $sub"
+ech0 "$R sub: $sub $N"
