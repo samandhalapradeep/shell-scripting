@@ -1,12 +1,18 @@
 #!/bin/bash
-R="\e[31m" 
+#!/bin/bash
+
+# Define color codes
+R="\e[31m"
 N="\e[0m"
 
+# Declare and initialize variables
 num1=10
 num2=20
 
-sum=$((num1+num2))
-sub=$((num1-num2))
+# Calculate the sum and sub
+sum=$((num1 + num2))
+sub=$((num1 - num2))
 
-echo -e "($R... sum:$sum $N)"
-echo -e "($R... sub:$sub $N)"
+# Print the results with the sum and sub in red
+echo -e "Sum: ${R}${sum}${N}"
+echo -e "Sub: ${R}${sub}${N}"
