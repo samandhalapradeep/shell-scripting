@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Variables
+ami_id=ami-0b4f379183e5706b9
+security_group=sg-0463541756967fe45
+instances=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
+
+for i in "${instances[@]}"
+do
+    if [ $i == "mongodb" ] || [ $i == "mysql" ] || [ $i == "shipping" ]
+    then
+    instance_type="t3.medium"
+    else
+    instance_type="t2.micro"
+fi
+
+# Create EC2 instance
+aws ec2 run-instances \
+    --image-id ami-0b4f379183e5706b9 \
+    --instance-type $instance_type \
+    --security-groups sg-0463541756967fe45
+done 
