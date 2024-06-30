@@ -7,7 +7,7 @@ instances=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipp
 
 for i in "${instances[@]}"
 do
-    echp "instance is: $i"
+    echo "instance is: $i"
     if [ $i == "mongodb" ] || [ $i == "mysql" ] || [ $i == "shipping" ]
     then
     instance_type="t3.medium"
@@ -16,8 +16,5 @@ do
 fi
 
 # Create EC2 instance
-aws ec2 run-instances \
-    --image-id ami-0b4f379183e5706b9 \
-    --instance-type $instance_type \
-    --security-groups sg-0463541756967fe45
+aws ec2 run-instances --image-id ami-0b4f379183e5706b9 --instance-type $instance_type  --security-group-ids sg-0463541756967fe45
 done 
