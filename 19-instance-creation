@@ -2,7 +2,7 @@
 
 # Variables
 ami_id=ami-0b4f379183e5706b9
-security_group=sg-0463541756967fe45
+sg_id=sg-0463541756967fe45
 instances=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 
 for i in "${instances[@]}"
